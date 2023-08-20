@@ -1,5 +1,5 @@
 <center>
-  <img width="100px" src="../etsets/moe.png" />
+  <img width="100px" src="../assets/moe.png" />
   <h2> Moec WhatsApp Template </h2>
 </center>
 

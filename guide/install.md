@@ -17,4 +17,14 @@ sudo apt install git -y
 ```
 
 ## For MacOS and Windows
+
+### Install nodejs
 Visit the [Node installer](https://nodejs.org/en/download) and choose the hardware you are using.
+
+### Install Git
+
+#### Windows
+Go to [Git Installer Win](https://git-scm.com/download/win) and will automatically installed
+
+#### MacOS
+Go to [Git Installer MacOS](https://git-scm.com/download/mac) and will automatically installed
