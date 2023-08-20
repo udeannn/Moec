@@ -6,5 +6,5 @@
 ## Welcome to guide
 
 ### List of table
-- [How to install](/install.md)
-- [How to add new Commands](/addcmd.md)
+- [How to install](install.md)
+- [How to add new Commands](addcmd.md)
