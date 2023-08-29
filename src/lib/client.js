@@ -20,7 +20,7 @@ export async function start() {
 
   socket.ev.on('connection.update', ({ connection, lastDisconnect }) => {
     if (connection === 'close') {
-      if (lastDisconnect.output.statusCode !== DisconnectReason.loggedOut) {
+      if (lastDisconnect?.output?.statusCode !== DisconnectReason.loggedOut) {
         console.log('[Info] Reconnect to server...');
         start();
       } else {
