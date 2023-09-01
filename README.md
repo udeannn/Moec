@@ -1,10 +1,10 @@
-<center>
+<div align="center">
   <img width="100px" src="/assets/moe.png" />
   <h2> Moec WhatsApp Template </h2>
-</center>
+</div>
 
 
-> **WARNING:** This project is provided for educational purposes only.
+> **warning** This project is provided for educational purposes only.
 > The usage of code within this project is at the user's own risk.
 > The code author is not responsible for any damage or issues that may arise.
 
@@ -39,6 +39,8 @@ cp -i config.example.js config.js
 ``` bash
 node src/index.js
 ```
+
+[learn more](/guide)
 
 ## Contributing
 We welcome contributions from the community to improve and enhance the project. If you're interested in contributing, please follow these guidelines:

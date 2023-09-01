@@ -36,8 +36,9 @@ export const setup = {
  * @param args - text from sender as an array of objects ["hello", "how"]
  * @returns void
  **/
-export async function run(ctx, obj, args){
-   ctx.sendMessage(obj.room.id, { text: "hello" })
+export async function run(ctx, obj) {
+  await ctx.sendMessage(obj.room.id, {text: "Hello from long"}, {quoted: obj.message.rawkey}) // Reply message
+  await obj.reply("Hello from short") // Shortcut
 }
 ```
 

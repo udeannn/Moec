@@ -5,7 +5,7 @@ import newWASockets, {
 import { pino } from 'pino';
 
 import { Execute } from '../commands/listen.js';
-import { config } from '../config.js';
+import { prefix } from '../config.js';
 import { event } from '../index.js';
 import { MessageObj } from '../utils/messages.js';
 
@@ -13,7 +13,7 @@ export async function start() {
   const { state, saveCreds } = await useMultiFileAuthState('session');
 
   const socket = newWASockets.default({
-    logger: pino({ level: 'silent' }),
+    logger: pino({ level: 'info' }),
     auth: state,
     printQRInTerminal: true,
   });
@@ -56,7 +56,7 @@ export async function start() {
 
       if (obj.message.text) {
         const getPrefix = obj.message.text[0].trim();
-        if (!config.prefix.includes(getPrefix)) return;
+        if (!prefix.includes(getPrefix)) return;
         try {
           await Execute(socket, obj);
         } catch (error) {

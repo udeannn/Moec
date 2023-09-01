@@ -1,6 +1,6 @@
 {
   "name": "Moec",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template Whatsapp Bot",
   "main": "src/index.js",
   "author": "Takahashi Izumi C",

@@ -4,5 +4,10 @@ export const setup = {
 };
 
 export async function run(ctx, obj) {
-  await obj.reply('Hu');
+  await ctx.sendMessage(
+    obj.room.id,
+    { text: 'Hello from long' },
+    { quoted: obj.message.rawkey },
+  ); // Reply message
+  await obj.reply('Hello from short'); // Shortcut
 }

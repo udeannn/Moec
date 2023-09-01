@@ -42,7 +42,7 @@ export async function MessageObj(ctx, obj) {
       type: Type(obj.message),
       text: Text(obj.message),
       media: Media(obj),
-      rawkey: obj.key,
+      rawkey: obj,
     },
     replied: await Replied(obj),
     group: group,
