@@ -1,4 +1,4 @@
-import { config } from '../config.js';
+import { prefix, owner_id } from '../config.js';
 import fs from 'fs/promises';
 
 async function listCommands() {
@@ -24,7 +24,6 @@ async function listCommands() {
 }
 
 export async function Execute(ctx, obj) {
-  const { prefix, owner_id } = config;
   const { room, sender, message, group } = obj;
   const ids = sender.id.replace(/@s.whatsapp.net/g, '');
   const [arg, ...args] = message.text.trim().split(' ');
@@ -43,7 +42,7 @@ export async function Execute(ctx, obj) {
         return obj.reply('Ups. Only owner can run this commands.');
       }
       if (setup.group_required && !room.is_group) {
-        return obj.reply('Ups. Only on group can run this commands')
+        return obj.reply('Ups. Only on group can run this commands');
       }
       if (setup.permission === 3) {
         if (room.is_group) {
