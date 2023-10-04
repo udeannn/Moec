@@ -25,7 +25,7 @@ async function listCommands() {
 
 export async function Execute(ctx, obj) {
   const { prefix, owner_id } = config;
-  const { room, sender, message } = obj;
+  const { room, sender, message, group } = obj;
   const ids = sender.id.replace(/@s.whatsapp.net/g, '');
   const [arg, ...args] = message.text.trim().split(' ');
   const command = arg.replace(/[^\w\s]/gi, '');
@@ -45,6 +45,16 @@ export async function Execute(ctx, obj) {
       if (setup.group_required && !room.is_group) {
         return obj.reply('Ups. Only on group can run this commands')
       }
+      if (setup.permission === 3) {
+        if (room.is_group) {
+          const foundData = group?.member.find(item => item.id === sender.id);
+          if (foundData?.admin !== 'admin') {
+            return obj.reply('Ups. Only admin can run this commands.');
+          }
+        }else{
+          return obj.reply('Ups. Only on group can run this commands');
+        }
+      } 
 
       await run(ctx, obj, args);
     }
